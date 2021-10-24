@@ -2,8 +2,7 @@ FROM maven:3.8.3-openjdk-17 AS builder
 
 WORKDIR /src
 
-COPY pom.xml .
-COPY ./src .
+COPY . .
 RUN mvn -B package --file pom.xml -DskipTests
 
 FROM openjdk:17-alpine
